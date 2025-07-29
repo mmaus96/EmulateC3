@@ -1,0 +1,10 @@
+training_filename: /pscratch/sd/m/mmaus/DESI_velocileptors_redef/emulator/FM/NeuralNet/training_set/LRG2/pt_FM_w0waCDM_1e6pts_training_data_LRG2.h5
+output_path: /pscratch/sd/m/mmaus/DESI_velocileptors_redef/emulator/FM/NeuralNet/emu/LRG2/1e6/abacus_p2_net
+target: p2
+param_dataset: params_pkell
+use_asinh: True
+scale_by_std: True
+n_epochs: 30
+n_pcs: 50
+n_hidden: [128, 128, 128, 128]
+downsample: 1

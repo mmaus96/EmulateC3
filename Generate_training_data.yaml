@@ -1,0 +1,198 @@
+theory:
+  train_SF_emulator_likelihood.SF_pk_theory_zs:
+      zfids:
+      - 0.8
+      hfid:
+      - 0.6736
+      basedir: /global/cscratch1/sd/mmaus/ShapeFit/emulator/abacus_fid/emu/
+      s8_filename: 
+      plin_filename: Plin.txt
+      # pk_filenames:
+      stop_at_error: True
+      
+likelihood:
+  pk_boss_likelihoods_emu_m.abacus_mock_LRG:
+    sf_kmins:
+    - 0.02
+    sf_mmaxs:
+    - 0.20
+    sf_qmaxs:
+    - 0.20
+    sig8: 0.8076
+    kmax_spline: 0.5
+    stop_at_error: True
+    
+params:
+  f_sig8:
+    prior:
+      min: 0.0
+      max: 2.0
+    ref:
+      dist: norm
+      loc:  0.466
+      scale: 0.05
+    latex: f\sigma_8
+  apar:
+    prior:
+      min: 0.5
+      max: 1.5
+    ref:
+      dist: norm
+      loc: 1.0
+      scale: 0.03
+    latex: \alpha_{\parallel}
+  aperp:
+    prior:
+      min: 0.5
+      max: 1.5
+    ref:
+      dist: norm
+      loc: 1.0
+      scale: 0.03
+    latex: \alpha_{\perp}
+  m:
+    prior:
+      min: -3.0
+      max: 3.0
+    ref:
+      dist: norm
+      loc: 0.0
+      scale: 0.05
+    latex: m
+  
+    
+  # NGCz3
+  bsig8_LRG:
+    prior:
+      dist: uniform
+      min:  0.5
+      max:  3.0
+    ref:
+      dist:  norm
+      loc:   1.7239232
+      scale: 0.05
+    latex: (1+b_1^{N3})\sigma_8
+  b2_LRG:
+    prior:
+      dist: uniform
+      min: -20.0
+      max: 20.0
+      # dist:  norm
+      # loc:   0.0
+      # scale: 10.
+    ref:
+      dist:  norm
+      loc:   -2.1724898
+      scale: 0.1
+    latex: b_2^{N3}
+  bs_LRG:
+    prior:
+      dist:  uniform
+      min: -20.0
+      max: 20.0
+      # dist:  norm
+      # loc:   0.0
+      # scale: 5.0
+    ref:
+      dist:  norm
+      loc:   1.0970124
+      scale: 0.1
+    latex: b_s^{N3}
+  alpha0_LRG:
+    prior:
+      dist:  uniform
+      min: -200.0
+      max: 200.0
+      # dist:  norm
+      # loc:   0.0
+      # scale: 100.
+    ref:
+      dist:  norm
+      loc:   11.070999
+      scale: 0.5
+    latex: \alpha_0^{N3}
+  alpha2_LRG:
+    prior:
+      dist:  uniform
+      min: -200.0
+      max: 200.0
+      # dist:  norm
+      # loc:   0.0
+      # scale: 100.
+    ref:
+      dist:  norm
+      loc:   1.4
+      scale: 0.5
+    latex: \alpha_2^{N3}
+  SN0_LRG:
+    prior:
+      dist:  uniform
+      min: -2000.0
+      max: 2000.0
+      # dist:  norm
+      # loc:   0.0
+      # scale: 1000.
+    ref:
+      dist:  norm
+      loc:   300.91745
+      scale: 100.
+    latex: SN_0^{N3}
+  SN2_LRG:
+    prior:
+      dist:  uniform
+      min:   -100000.0
+      max: 100000.0
+      # dist:  norm
+      # loc:   0.0
+      # scale: 5e4
+    ref:
+      dist:  norm
+      loc:   -14851.563
+      scale:  1e3
+    latex: SN_2^{N3}
+    
+  SN4_LRG:
+    prior:
+      dist:  uniform
+      min:   -1e7
+      max:  1e7
+      # dist:  norm
+      # loc:   0.0
+      # scale: 5e4
+    ref:
+      dist:  norm
+      loc:   -14851.563
+      scale:  1e3
+    latex: SN_2^{N3}
+
+# sampler:
+#   mcmc:
+#     covmat: auto
+# #    covmat: /global/cscratch1/sd/sfschen/boss_analysis_joint/covini/bossz3_pk.covini
+#     learn_proposal: True
+#     learn_proposal_Rminus1_max: 130.0
+#     output_every: 60s
+#     measure_speeds: False
+#     max_tries: 500
+#     drag: False
+#     oversample_power: 0.4
+#     proposal_scale: 1.5
+#     Rminus1_stop: 0.01
+#     blocking:
+#       - [ 1, [f_sig8,apar,aperp,m]]
+#       - [ 2, [bsig8_LRG,b2_LRG,bs_LRG,alpha0_LRG,alpha2_LRG,SN0_LRG,SN2_LRG,]]
+# output: chains/test/create_train_pk
+# debug: True
+# debug_file: chains/test/create_train_pk
+# timing: True
+# stop_on_error: True
+
+emulate:
+  likelihood :
+    pk_boss_likelihoods_emu_m.abacus_mock_LRG: [w0waCDM_multipoles]
+
+  output_filename : /pscratch/sd/m/mmaus/DESI_velocileptors_redef/emulator/FM/NeuralNet/pt_FM_w0waCDM_20xfast_4e3pts_training_data.h5
+  nstart: 0
+  nend: 4000
+  # param_names_fast: ['bsig8_LRG','b2sig8_LRG','bssig8_LRG','b3sig8_LRG','alpha0_LRG','alpha2_LRG','alpha4_LRG','SN0_LRG','SN2_LRG','SN4_LRG']
+  # nfast_per_slow: 20

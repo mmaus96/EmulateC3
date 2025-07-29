@@ -1,0 +1,229 @@
+theory:
+  train_FM_emulator_likelihood.Taylor_pk_theory_zs:
+      zfids:
+      # - 0.30
+      # - 0.51
+      # - 0.71
+      # - 0.92
+      - 0.96
+      # - 1.32
+      # - 1.49
+      # basedir: /pscratch/sd/m/mmaus/DESI_velocileptors_redef/emulator/FM/wCDM/emu/
+      # s8_filenames: 
+      # - abacus_s8_wcdm_z0.30_new.json
+      # - abacus_s8_wcdm_z0.51_new.json
+      # - abacus_s8_wcdm_z0.71_new.json
+      # - abacus_s8_wcdm_z0.92_new.json
+      # - abacus_s8_wcdm_z0.96_new.json
+      # - abacus_s8_wcdm_z1.32_new.json
+      # - abacus_s8_wcdm_z1.49_new.json
+      # pk_filenames:
+      # - abacus_z_0.30_pkells_new.json
+      # - abacus_z_0.51_pkells_new.json
+      # - abacus_z_0.71_pkells_new.json
+      # - abacus_z_0.92_pkells_new.json
+      # - abacus_z_0.96_pkells_new.json
+      # - abacus_z_1.32_pkells_new.json
+      # - abacus_z_1.49_pkells_new.json
+      omega_nu: 0.0006442
+      stop_at_error: True
+      
+likelihood:
+  pk_abacus_likelihoods.abacus_theory_ELG1_hex:
+    basedir: /pscratch/sd/m/mmaus/DESI_velocileptors_redef/
+    # linear_param_dict_fn: rsd_likelihood/abacus_linear_params_LRG_hex_redefined_ct_20.yaml
+    linear_param_dict_fn: rsd_likelihood/abacus_linear_params_Y1_hex_ct50_desilike.yaml
+    fs_kmins:
+    - 0.02
+    # - 0.02
+    # - 0.02
+    # - 0.02
+    # - 0.02
+    # - 0.02
+    # - 0.02
+    fs_mmaxs:
+    - 0.20
+    # - 0.20
+    # - 0.20
+    # - 0.20
+    # - 0.20
+    # - 0.20
+    # - 0.20
+    fs_qmaxs:
+    - 0.20
+    # - 0.20
+    # - 0.20
+    # - 0.20
+    # - 0.20
+    # - 0.20
+    # - 0.20
+    fs_hmaxs:
+    - 0.10
+    # - 0.10
+    # - 0.10
+    # - 0.10
+    # - 0.10
+    # - 0.10
+    # - 0.10
+    # ideal: True
+    kmax_spline:
+    - 0.4
+    # - 0.4
+    # - 0.4
+    # - 0.4
+    # - 0.4
+    # - 0.4
+    # - 0.4
+    include_priors: True
+    optimize: False
+    stop_at_error: True
+    cov_fac: 1.0
+    inv_cov_fac: 0.858
+    hexa: True
+    jeff: False
+    redef: True
+    ext_prior: False
+    
+    
+params:
+  w0: 
+    # value: -1.0
+    prior:
+      min: -3.0
+      max: -0.5
+      # min: -2.0
+      # max: 1.0
+    ref:
+      dist: norm
+      loc:  -1.0
+      scale: 0.01
+    latex: w_0
+  wa: 
+    # value: -1.0
+    prior:
+      min: -2.0
+      max: 1.0
+      # min: -2.0
+      # max: 1.0
+    ref:
+      dist: norm
+      loc:  0.0
+      scale: 0.01
+    latex: w_a
+  ns: 
+    # value: -1.0
+    prior:
+      min: 0.8
+      max: 1.2
+      # min: -2.0
+      # max: 1.0
+    ref:
+      dist: norm
+      loc:  0.9649
+      scale: 0.001
+    latex: n_s
+  H0:
+    # value: 67.36
+    prior:
+      # min: 60.0
+      # max: 80.0
+      min: 55.0
+      max: 85.0
+    ref:
+      dist: norm
+      loc:  69.848
+      scale: 1.0
+    latex: H_0
+  omega_b:
+    # value: 0.02237
+    prior:
+      # dist:  norm
+      # loc: 0.02237
+      # scale: 0.00037
+      min: 0.020
+      max: 0.030
+    ref:
+      dist: norm
+      loc: 0.02237
+      scale: 0.0001
+    latex: \Omega_\mathrm{b}h^2
+  omega_cdm:
+    # value: 0.12
+    prior:
+      min: 0.08
+      max: 0.16
+      # min: 0.05
+      # max: 0.2
+    ref:
+      dist: norm
+      loc: 0.1
+      scale: 0.05
+    latex: \Omega_\mathrm{cdm}h^2
+  logA:
+    # value: 3.0363942552728806
+    prior:
+      dist: uniform
+      min:  2.03
+      max:  4.03
+      # min:  1.61
+      # max:  3.91
+    ref:
+      dist:  norm
+      loc:   3.0364
+      scale: 0.01
+    latex: \log(10^{10} A_\mathrm{s})
+  wsum:
+    derived: "lambda w0,wa: w0 + wa"
+    max: -0.001
+  sigma8:
+    latex: \sigma_8
+  omegam:
+    latex: \Omega_\mathrm{m}
+  
+  bsig8_ELG1:
+    value: 0.5944
+    latex: (1+b_1^{ELG1})\sigma_8
+  b2sig8_ELG1:
+    value: -0.08
+    latex: b_2\sigma_8^{ELG1}
+  bssig8_ELG1:
+    value: -0.02
+    latex: b_s\sigma_8^{ELG1}
+  b3sig8_ELG1:
+    value: 0.06
+    latex: b_3\sigma_8^{ELG1}
+  
+    
+
+
+# sampler:
+#   mcmc:
+#     # covmat: auto
+#     covmat: /pscratch/sd/m/mmaus/DESI_velocileptors_redef/chains/FM/Y1_theory/vel_theory/new/wcdm/maxF/rebin/pk.covmat
+#     learn_proposal: True
+#     learn_proposal_Rminus1_max: 1.0
+#     output_every: 60s
+#     measure_speeds: False
+#     max_tries: 500
+#     drag: False
+#     oversample_power: 0.4
+#     proposal_scale: 1.5
+#     Rminus1_stop: 0.01
+#     blocking:
+#       - [ 1, [w,logA,omega_b,omega_cdm,H0]]
+#       # - [ 1, [logA,omega_b,omega_cdm,H0]]
+#       # - [ 2, [bsig8_BGS,b2sig8_BGS,bssig8_BGS,b3sig8_BGS,bsig8_LRG1,b2sig8_LRG1,bssig8_LRG1,b3sig8_LRG1,bsig8_LRG2,b2sig8_LRG2,bssig8_LRG2,b3sig8_LRG2,bsig8_LRG3,b2sig8_LRG3,bssig8_LRG3,b3sig8_LRG3,bsig8_ELG1,b2sig8_ELG1,bssig8_ELG1,b3sig8_ELG1,bsig8_ELG2,b2sig8_ELG2,bssig8_ELG2,b3sig8_ELG2,bsig8_QSO,b2sig8_QSO,bssig8_QSO,b3sig8_QSO]]
+#       - [ 2, [bsig8_BGS,b2sig8_BGS,bssig8_BGS,b3sig8_BGS]]
+# output: chains/FM/Y1_theory/vel_theory/new/wcdm/maxF/direct/ell02/pk
+# debug: True
+# debug_file: chains/FM/Y1_theory/vel_theory/new/wcdm/maxF/direct/ell02/pk
+# timing: True
+# stop_on_error: True
+
+emulate:
+  likelihood :
+    pk_abacus_likelihoods.abacus_theory_ELG1_hex: [w0waCDM_multipoles]
+
+  output_filename : training_set/ELG1/pt_FM_w0waCDM_1e6pts_training_data_ELG1.h5
+  nstart: 0
+  nend: 300000

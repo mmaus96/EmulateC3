@@ -1,0 +1,34 @@
+zfid:     0.8
+
+sf_sample_names:
+- LRG
+
+# The file paths below assume the chain/code will be
+# running in the directory where the BOSSxPlanck repo
+# has been cloned.  Otherwise, override these with the
+# full path.
+
+basedir: /global/cscratch1/sd/mmaus/ShapeFit/
+
+sf_datfns: 
+- mock_data/LRG/pk/z0.800/Pk_mean.txt
+
+# covfn: mock_data/LRG/covariances/cov_cut.txt
+covfn: mock_data/LRG/covariances/cov_mean.txt
+
+sf_matMfns: 
+- mock_data/LRG/matrices/Mmat.txt
+
+sf_matWfns: 
+- mock_data/LRG/matrices/Wmat.txt
+
+# fs_datfns: 
+# - mock_data/LRG/pk/z0.800/dk0p01/Pk_mean.txt
+
+# covfn: mock_data/LRG/covariances/cov_dk0p01.txt
+
+# fs_matMfns: 
+# - mock_data/LRG/matrices/Mmat_dk0p01.txt
+
+# fs_matWfns: 
+# - mock_data/LRG/matrices/Wmat_dk0p01.txt

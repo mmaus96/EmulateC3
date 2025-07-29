@@ -1,0 +1,126 @@
+alpha0_BGS:
+  mean: 0.0
+  std: 12.5
+alpha2_BGS:
+  mean: 0.0
+  std: 12.5
+alpha4_BGS:
+  mean: 0.0
+  std: 50.0
+SN0_BGS:
+  mean: 0.0
+  std: 12205.4
+SN2_BGS:
+  mean: 0.0
+  std: 117062.45704928496
+SN4_BGS:
+  mean: 0.0
+  std: 2994001.310985998
+# alpha0_LRG1:
+#   mean: 0.0
+#   std: 12.5
+# alpha2_LRG1:
+#   mean: 0.0
+#   std: 12.5
+# alpha4_LRG1:
+#   mean: 0.0
+#   std: 50.0
+# SN0_LRG1:
+#   mean: 0.0
+#   std: 10837.4
+# SN2_LRG1:
+#   mean: 0.0
+#   std: 155912.87528789564
+# SN4_LRG1:
+#   mean: 0.0
+#   std: 5981465.340527901
+# alpha0_LRG2:
+#   mean: 0.0
+#   std: 12.5
+# alpha2_LRG2:
+#   mean: 0.0
+#   std: 12.5
+# alpha4_LRG2:
+#   mean: 0.0
+#   std: 50.0
+# SN0_LRG2:
+#   mean: 0.0
+#   std: 11178.6
+# SN2_LRG2:
+#   mean: 0.0
+#   std: 160821.56861362228
+# SN4_LRG2:
+#   mean: 0.0
+#   std: 6169783.200364036
+# alpha0_LRG3:
+#   mean: 0.0
+#   std: 12.5
+# alpha2_LRG3:
+#   mean: 0.0
+#   std: 12.5
+# alpha4_LRG3:
+#   mean: 0.0
+#   std: 50.0
+# SN0_LRG3:
+#   mean: 0.0
+#   std: 16738.4
+# SN2_LRG3:
+#   mean: 0.0
+#   std: 240807.94948224782
+# SN4_LRG3:
+#   mean: 0.0
+#   std: 9238392.922277689
+# alpha0_ELG1:
+#   mean: 0.0
+#   std: 12.5
+# alpha2_ELG1:
+#   mean: 0.0
+#   std: 12.5
+# alpha4_ELG1:
+#   mean: 0.0
+#   std: 50.0
+# SN0_ELG1:
+#   mean: 0.0
+#   std: 16255.8
+# SN2_ELG1:
+#   mean: 0.0
+#   std: 39188.08928571429
+# SN4_ELG1:
+#   mean: 0.0
+#   std: 377885.14668367355
+# alpha0_ELG2:
+#   mean: 0.0
+#   std: 12.5
+# alpha2_ELG2:
+#   mean: 0.0
+#   std: 12.5
+# alpha4_ELG2:
+#   mean: 0.0
+#   std: 50.0
+# SN0_ELG2:
+#   mean: 0.0
+#   std: 20920.8
+# SN2_ELG2:
+#   mean: 0.0
+#   std: 50434.07142857144
+# SN4_ELG2:
+#   mean: 0.0
+#   std: 486328.5459183675
+# alpha0_QSO:
+#   mean: 0.0
+#   std: 12.5
+# alpha2_QSO:
+#   mean: 0.0
+#   std: 12.5
+# alpha4_QSO:
+#   mean: 0.0
+#   std: 50.0
+# SN0_QSO:
+#   mean: 0.0
+#   std: 97200.4
+# SN2_QSO:
+#   mean: 0.0
+#   std: 235284.6864723602
+# SN4_QSO:
+#   mean: 0.0
+#   std: 7593779.955418131
